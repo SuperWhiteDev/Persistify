@@ -1,6 +1,6 @@
 import os
 import sys
-
+from collections.abc import Iterator
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from persistify.persistify import save, load
@@ -11,6 +11,7 @@ file = os.path.join(os.path.dirname(__file__), "example1.data")
 
 if not os.path.exists(file):
     with open(file, "w", encoding="UTF-8") as f:
+        #save(f, data, indent=4, expand=True)
         save(f, data)
 else:
     with open(file, "r", encoding="UTF-8") as f:
@@ -18,4 +19,10 @@ else:
         print(f"Data is {loaded_data} Type: {type(loaded_data)}")
 
         for element in loaded_data:
-            print(f"Element{type(element)}: {element}.")
+            if isinstance(element, Iterator) or isinstance(element, dict):
+                for subelement in element:
+                    print(f"\tElement{type(element)} - SubElement{type(subelement)}: {subelement}.")
+            else:
+                print(f"Element{type(element)}: {element}.")
+
+            

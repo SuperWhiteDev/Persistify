@@ -1,0 +1,1 @@
+{'__classname__': 'RandomAccessClassChild', 'parent': [{'__classname__': 'RandomAccessClass', 'num': 35, 'string': 'RAC', 'elist': [None, 'Random', 'Access', 'Memory', None], 'statis_attribute_1': None, '__weakref__': None, '__doc__': None}], 'parent_iter': 0, 'unique_id': 714742730, '__weakref__': None, '__doc__': None}
