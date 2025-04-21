@@ -2,8 +2,6 @@ import os
 import sys
 from random import randint
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 from persistify.persistify import save, load
 
 class Student:
@@ -50,24 +48,23 @@ class Course:
     def __init__(self, title):
         self.title = title
         self.lessons = []
-        #self.professor = None
-        #self.students = []  
+        self.professor = None
+        self.students = []  
 
-    # def add_student(self, student):
-    #     if student not in self.students:
-    #         self.students.append(student)
-    #         if self not in student.courses:
-    #             student.courses.append(self)
+    def add_student(self, student):
+        if student not in self.students:
+            self.students.append(student)
+            if self not in student.courses:
+                student.courses.append(self)
     
     def add_lesson(self, lesson_name: str):
         self.lessons.append(lesson_name)
 
-    # def __str__(self):
-    #     prof_name = self.professor.name if self.professor else "No professor"
-    #     student_names = ', '.join([s.name for s in self.students])
-    #     return f"Course: {self.title}, Professor: {prof_name}, Students: [{student_names}]"
     def __str__(self) -> str:
-        res = f"\tCourse: {self.title}:"
+        prof_name = self.professor.name if self.professor else "No professor"
+        student_names = ', '.join([s.name for s in self.students])
+         
+        res = f"\tProfessor: {prof_name}, Students: [{student_names}] Course: {self.title}:"
         for lesson in self.lessons:
             res += f"\n\t\t{lesson}"
         return res
@@ -144,9 +141,9 @@ def main():
     cs_department.add_course(course_algorithms)
     math_department.add_course(course_java)    
 
-    #prof_alice.add_course(course_python)
-    #prof_alice.add_course(course_algorithms)
-    #prof_bob.add_course(course_calculus)
+    prof_alice.add_course(course_python)
+    prof_alice.add_course(course_algorithms)
+    prof_bob.add_course(course_java)
 
 
     student_charlie = Student(1001, "Charlie")
@@ -157,9 +154,9 @@ def main():
     cs_department.add_student(student_david)
     math_department.add_student(student_eve)
 
-    #course_python.add_student(student_charlie)
-    #course_algorithms.add_student(student_david)
-    #course_calculus.add_student(student_eve)
+    course_python.add_student(student_charlie)
+    course_algorithms.add_student(student_david)
+    course_java.add_student(student_eve)
     
     print("Original instance of University:")
     print(university)

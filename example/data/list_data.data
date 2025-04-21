@@ -4,21 +4,21 @@
     'String',
     (
         'Data',
-    '(In list)',
-    1
-),
-{
-    'data': None
-},
-[
-    True,
-    False
-],
-{
-    1,
-    2,
-    5,
-    8,
-    11
-}
+        '(In list)',
+        1
+    ),
+    {
+        'data': None
+    },
+    [
+        True,
+        False
+    ],
+    {
+        1,
+        2,
+        5,
+        8,
+        11
+    }
 ]

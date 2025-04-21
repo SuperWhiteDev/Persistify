@@ -4,8 +4,6 @@ import shutil
 import unittest
 from random import randint
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 from persistify.persistify import save, load
 
 class RandomAccessClass:

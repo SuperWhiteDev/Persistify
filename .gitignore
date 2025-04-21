@@ -1,0 +1,11 @@
+# Byte-compiled
+__pycache__/
+
+# Distribution / packaging directories
+build/
+dist/
+.eggs/
+*.egg-info/
+
+*.pydat
+*.data

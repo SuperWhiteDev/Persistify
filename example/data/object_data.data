@@ -1,1 +1,1 @@
-{'__classname__': 'RandomAccessClass', 'num': -1, 'string': 'RAC', 'elist': [None, 'Random', 'Access', 'Memory', None], 'statis_attribute_1': 'Correct', '__weakref__': None, '__doc__': None}
+{'__classname__': 'RandomAccessClass', '__classid__': 1483576369968, 'num': -1, 'string': 'RAC', 'elist': [None, 'Random', 'Access', 'Memory', None], 'statis_attribute_1': 'Correct', '__weakref__': None, '__doc__': None}
