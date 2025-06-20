@@ -14,8 +14,12 @@ It allows you to serialize various data types (lists, dictionaries, sets, custom
 
 Clone the repository and install the package:
 
+## Examples
+
+You can find examples of using Persistify in the 'example' folder.
+
 ```bash
-git clone https://github.com/YourUsername/Persistify.git
+git clone https://github.com/SuperWhiteDev/Persistify.git
 cd Persistify
 pip install .
 ```
